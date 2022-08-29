@@ -75,7 +75,7 @@ window.addEventListener('load',()=>{
             }
             map.on('click', onMapClick);
 
-            //geolocation plugin
+            //leaflet-locatecontrol plugin
             var lc = L.control.locate({
                 position: 'topleft',
                 tap: false,
