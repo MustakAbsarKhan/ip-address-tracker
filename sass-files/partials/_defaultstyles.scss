@@ -1,0 +1,17 @@
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+};
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+};
+body{
+    font-family: 'Open Sans', sans-serif;
+    min-height: 100vh;
+    font-family: 'Rubik', sans-serif;
+    background: url(../../images/pattern-bg.png);
+};

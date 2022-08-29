@@ -17,10 +17,10 @@ window.addEventListener('load',()=>{
         fetch(api)
         .then((response)=>response.json())//collects data as json
         .then((data)=>{
-            //console.log(data);
+            console.log(data);
             //declaring contents of api as objects
             const ip = data.ip;//103.145.74.149
-            const {city,country_name,isp,country_flag} = data;//Dhaka, Bangladesh,Master Net
+            const {city,country_name,isp,country_flag,latitude,longitude} = data;//Dhaka, Bangladesh,Master Net
             const {current_time,name} = data.time_zone;//"2022-08-27 23:25:49.527+0600";
             const {code,symbol} = data.currency;//BDT,TAKA SYMBOL
             //const currencyNAME = data.currency.name;//Bangladeshi Taka
@@ -40,8 +40,55 @@ window.addEventListener('load',()=>{
             ispData.textContent = isp;
             currencyData.textContent = code+`(${symbol})`;
             flagIcon.src = country_flag;
+            
+            //map initiation
+            var map = L.map('map').setView([latitude, longitude], 13);
+
+            //maptile setup
+            L.tileLayer('https://api.maptiler.com/maps/streets/{z}/{x}/{y}.png?key=Kiarb32YtKIgXk1i9lL1',{
+                tileSize: 512,
+                zoomOffset: -1,
+                minZoom: 1,
+                attribution: "\u003ca href=\"https://www.maptiler.com/copyright/\" target=\"_blank\"\u003e\u0026copy; MapTiler\u003c/a\u003e \u003ca href=\"https://www.openstreetmap.org/copyright\" target=\"_blank\"\u003e\u0026copy; OpenStreetMap contributors\u003c/a\u003e",
+                crossOrigin: true
+            }).addTo(map); 
+
+            //map icon
+            var blackIcon = L.icon({
+                iconUrl: 'images/icon-location.svg',
+                iconSize: [30, 40]
+            });
+
+            //marker & popup on marker
+            L.marker([latitude, longitude],{icon: blackIcon}).addTo(map)
+            .bindPopup('Your IP Shows You Here')
+            .openPopup();
+
+            //popup on map click
+            var popup = L.popup();
+
+            function onMapClick(e) {
+                popup
+                    .setLatLng(e.latlng)
+                    .setContent("You clicked the map at " + e.latlng.toString())
+                    .openOn(map);
+            }
+            map.on('click', onMapClick);
+
+            //geolocation plugin
+            var lc = L.control.locate({
+                position: 'topleft',
+                tap: false,
+                strings: {
+                    title: "Click here, to get your device's current location"
+                },
+                locateOptions: {
+                    enableHighAccuracy: true
+                }
+            }).addTo(map);
 
         });
     };
 
+    
 });
