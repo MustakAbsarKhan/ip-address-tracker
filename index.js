@@ -102,7 +102,7 @@ window.addEventListener('load',()=>{
             console.log(data)
             const {geoplugin_currencyCode,geoplugin_currencyConverter}=data;
             console.log(geoplugin_currencyCode,geoplugin_currencyConverter);
-            currencyconvertData.textContent = ("1 USD = "+geoplugin_currencyCode+geoplugin_currencyConverter);
+            currencyconvertData.textContent = ("$1 = "+geoplugin_currencyCode+geoplugin_currencyConverter);
         })
     };
 });

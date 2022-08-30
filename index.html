@@ -22,7 +22,7 @@
 
     <div class="search-bar">
       <input type="text" id="searchbox" placeholder="     Search for any IP address or domain">
-      <button class="searchbox-button"><img class="searchbox-button-img" src="images/icon-arrow.svg"></button>
+      <button class="searchbox-button"><img class="searchbox-button-img" src="./images/icon-arrow.svg"></button>
     </div>
 
     <div class="main-container">
@@ -61,19 +61,21 @@
       </div>
   
       <div class="sub-content-bar">
-  
-        <div class="currency-code">
-          <label for="currency-data">CURRENCY</label><br>
-          <p class="currency-data">BDT</p>
+        <div class="sub-content-bar-content">
+          <div class="currency-code">
+            <label for="currency-data">CURRENCY</label><br>
+            <p class="currency-data">BDT</p>
+          </div>
+          <div class="flags">
+            <label for="flag-icon">COUNTRY FLAG</label><br>
+            <img src="" class="flag-icon">
+          </div>
+          <div class="currency-convert">
+            <label for="currency-convert">Conversion Rate</label><br>
+            <p class="currency-convert-data">$1 = </p>
+          </div>
         </div>
-        <div class="flags">
-          <label for="flag-icon">COUNTRY FLAG</label><br>
-          <img src="" class="flag-icon">
-        </div>
-        <div class="currency-convert">
-          <label for="currency-convert">Conversion Rate</label><br>
-          <p class="currency-convert-data">1 USD = </p>
-        </div>
+        
         <div id="map"></div>
       </div>
 

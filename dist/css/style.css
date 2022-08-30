@@ -48,7 +48,6 @@ body {
   background-color: black;
   border: none;
   border-radius: 0 13px 13px 0;
-  background-image: url(../images/icon-arrow.svg);
   margin-right: 55px;
 }
 .main-body .search-bar button:active {
@@ -86,36 +85,42 @@ body {
 }
 .main-body .main-container .sub-content-bar {
   display: flex;
+  flex-direction: column;
+}
+.main-body .main-container .sub-content-bar .sub-content-bar-content {
+  z-index: 9;
+  position: absolute;
+  display: flex;
   justify-content: center;
   gap: 10%;
   text-align: center;
   margin-top: 1%;
-  margin-bottom: 3%;
   padding: 1%;
   background-color: #FFFFFF;
   width: 50.6%;
   margin-left: 24.5%;
   border-radius: 15px;
 }
-.main-body .main-container .sub-content-bar > div > label {
+.main-body .main-container .sub-content-bar .sub-content-bar-content .flags > img {
+  margin-top: 5px;
+  width: 4.4444444444vw;
+}
+.main-body .main-container .sub-content-bar .sub-content-bar-content > div > label {
   font-size: 0.9722222222vw;
   color: hsl(0deg, 0%, 59%);
 }
-.main-body .main-container .sub-content-bar > div > p {
+.main-body .main-container .sub-content-bar .sub-content-bar-content > div > p {
   font-size: 1.6666666667vw;
 }
 .main-body .main-container #map {
-  z-index: -1;
-  height: 44vh;
+  z-index: 2;
+  position: relative;
+  height: calc(618px - 20vw);
   width: 100%;
-  position: absolute;
-  margin-top: 2.57%;
+  margin-top: 4.6%;
 }
 .main-body .dev-info {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  margin: 5px;
   color: #FFFFFF;
-  font-size: 1.0416666667vw;
+  font-size: 0.8333333333vw;
 }/*# sourceMappingURL=style.css.map */
