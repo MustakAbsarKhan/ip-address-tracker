@@ -1,6 +1,115 @@
 @use "partials" as p;
 
-#map { 
-    height: 35vh;
-    width: 100%;
+.main-body{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    & .ip-header{
+        margin-top: 2%;
+        color: p.color(simple-white);
+        font-size: p.pxtovw(35);
+    };
+
+    & .search-bar{
+        display: flex;
+        justify-content: center;
+        text-align: left;
+
+        & #searchbox{
+            height: p.pxtovh(50);
+            width: p.pxtovw(490);
+            //margin-right: 6.3%;
+            margin-left: 4%;
+            border-radius: 13px 0 0 13px;
+            border: none;
+            margin-top: 1%;
+        };
+        & .searchbox-button{
+            margin-top: 1%;
+            height: p.pxtovh(50);
+            width: p.pxtovw(50);
+            background-color: black;
+            border: none;
+            border-radius: 0 13px 13px 0;
+            background-image: url(../images/icon-arrow.svg);
+            margin-right: 55px;
+        };
+        & button:active {
+            opacity: 0.7;
+            transform: translateY(1px);
+            border: inherit;
+            border: 2px solid black;
+        };
+    };
+
+    & .main-container{
+        
+        width: 100%;
+
+        & .content-bar{
+            background: p.color(simple-white);
+            display: flex;
+            border-radius: 15px;
+            justify-content: center;
+            width: 74%;
+            margin-left: 13%;
+            padding: 2%;
+            text-align: left;
+            margin-top: 2%;
+            gap:3%;
+            
+            & .line{
+                border-left: p.pxtovw(2) solid p.color(dark-grey);
+                height: p.pxtovh(82);
+                margin-top: 2%;
+            };
+
+            & >div>label{
+                font-size: p.pxtovw(14);
+                color: p.color(dark-grey);
+            };
+            & >div>p{
+                font-size: p.pxtovw(24);
+            };
+        };
+
+        & .sub-content-bar{
+            display: flex;
+            justify-content: center;
+            gap:10%;
+            text-align: center;
+            margin-top: 1%;
+            margin-bottom: 3%;
+            padding: 1%;
+            background-color: p.color(simple-white);
+            width: 50.6%;
+            margin-left: 24.5%;
+            border-radius: 15px;
+
+            & >div>label{
+                font-size: p.pxtovw(14);
+                color: p.color(dark-grey);
+            };
+            & >div>p{
+                font-size: p.pxtovw(24);
+            };
+        };
+        & #map { 
+            z-index: -1;
+            height: 44vh;
+            width: 100%;
+            position: absolute;
+            margin-top: 2.57%;
+        };
+    };
+    & .dev-info{
+        position: fixed;
+        bottom:0;
+        left: 0;
+        right: 0;
+        color:p.color(simple-white);
+        font-size: p.pxtovw(15);
+    };
+    
 };

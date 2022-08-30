@@ -8,9 +8,13 @@ window.addEventListener('load',()=>{
     let ispData = document.querySelector(".isp-data");
     let currencyData = document.querySelector(".currency-data");
     let flagIcon = document.querySelector(".flag-icon");
+    let currencyconvertData = document.querySelector(".currency-convert-data");
 
     let ipgeolocationAPI = `https://api.ipgeolocation.io/ipgeo?apiKey=038933b9d1e74176ba6c610f65af08a6&ip=`;//change api key with own key
     ipgeolocationapiCALL(ipgeolocationAPI);
+
+    let geopluginAPI = `http://www.geoplugin.net/json.gp?`;
+    geopluginapiCALL(geopluginAPI);
 
     function ipgeolocationapiCALL(api){//returns "ip": "103.145.74.149","continent_code": "AS","continent_name": "Asia","country_code2": "BD","country_code3": "BGD","country_name": "Bangladesh","country_capital": "Dhaka","state_prov": "Dhaka Division","district": "Savar Upazila","city": "Savar Union","zipcode": "","latitude": "23.86170","longitude": "90.25649","is_eu": false,"calling_code": "+880","country_tld": ".bd","languages": "bn-BD,en","country_flag": "https://ipgeolocation.io/static/flags/bd_64.png","geoname_id": "1200292","isp": "Master Net","connection_type": "","organization": "Master Net","currency": {"code": "BDT","name": "Bangladeshi Taka","symbol": "৳"},"time_zone": {"name": "Asia/Dhaka","offset": 6,"current_time": "2022-08-28 15:24:16.540+0600","current_time_unix": 1661678656.54,"is_dst": false,"dst_savings": 0
 
@@ -90,5 +94,15 @@ window.addEventListener('load',()=>{
         });
     };
 
-    
+    //Uses geopluginAPI for fetching currency value and conversion rate
+    function geopluginapiCALL(api){//returns "geoplugin_request": "103.145.74.136","geoplugin_status": 200,"geoplugin_delay": "2ms","geoplugin_credit": "Some of the returned data includes GeoLite data created by MaxMind, available from <a href='http://www.maxmind.com'>http://www.maxmind.com</a>.","geoplugin_city": "Dhaka","geoplugin_region": "Dhaka Division","geoplugin_regionCode": "13","geoplugin_regionName": "Dhaka","geoplugin_areaCode": "","geoplugin_dmaCode": "","geoplugin_countryCode": "BD","geoplugin_countryName": "Bangladesh","geoplugin_inEU": 0,"geoplugin_euVATrate": false,"geoplugin_continentCode": "AS","geoplugin_continentName": "Asia","geoplugin_latitude": "23.7272","geoplugin_longitude": "90.4093","geoplugin_locationAccuracyRadius": "100","geoplugin_timezone": "Asia/Dhaka","geoplugin_currencyCode": "BDT","geoplugin_currencySymbol": "Tk","geoplugin_currencySymbol_UTF8": "Tk","geoplugin_currencyConverter": 95.0836
+        fetch(api)
+        .then((response)=>response.json())
+        .then((data)=>{
+            console.log(data)
+            const {geoplugin_currencyCode,geoplugin_currencyConverter}=data;
+            console.log(geoplugin_currencyCode,geoplugin_currencyConverter);
+            currencyconvertData.textContent = ("1 USD = "+geoplugin_currencyCode+geoplugin_currencyConverter);
+        })
+    };
 });

@@ -1,0 +1,9 @@
+$color:(
+    "very-dark-grey":hsl(0, 0%, 17%),
+    "dark-grey":hsl(0, 0%, 59%),
+    "simple-white":#FFFFFF
+);
+
+@function color($color-name){
+    @return map-get($map: $color, $key: $color-name);
+};

@@ -1,0 +1,18 @@
+@use 'sass:math' as math;
+//converting px to em
+@function pxtoem($px){
+   @return math.div($px,16)+em;
+};
+
+//1440px default width
+@function pxtovw($px){
+   @return math.div($px*100,1440)+vw;
+};
+//1440px default height
+@function pxtovh($px){
+   @return math.div($px,7.59375)+vh;
+};
+//375px default width
+@function pxtovwMob($px){
+   @return math.div($px*100,375)+vw;
+};

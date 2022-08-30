@@ -18,11 +18,11 @@
 </head>
 <body>
   <main class="main-body">
-    <h2 class="ip-header">IP Address Tracker</h2>
+    <p class="ip-header">IP Address Tracker</p>
 
     <div class="search-bar">
-      <input type="text" id="searchbox">
-      <input type="image" src="images/icon-arrow.svg" style="background-color:black" alt="Search Icon">  
+      <input type="text" id="searchbox" placeholder="     Search for any IP address or domain">
+      <button class="searchbox-button"><img class="searchbox-button-img" src="images/icon-arrow.svg"></button>
     </div>
 
     <div class="main-container">
@@ -31,24 +31,31 @@
 
         <div class="ip">
           <label for="ip-address">IP ADDRESS</label><br>
-          <h2 class="ip-address">IP Address</h2>
+          <p class="ip-address">IP Address</p>
         </div>
+
+        <div class="line"></div>
 
         <div class="location">
           <label for="location-data">LOCATION</label><br>
-          <h2 class="city-data">City</h2>
-          <h2 class="country-data">Country</h2>
+          <p class="city-data">City</p>
+          <p class="country-data">Country</p>
         </div>
+
+        <div class="line"></div>
 
         <div class="timezone">
           <label for="timezone-data">TIME ZONE, TIME & DATE</label><br>
-          <h2 class="timezone-data">Timezone</h2>
-          <h2 class="time-data">Time</h2>
-          <h2 class="date-data">Date</h2>
+          <p class="timezone-data">Timezone</p>
+          <p class="time-data">Time</p>
+          <p class="date-data">Date</p>
         </div>
+
+        <div class="line"></div>
+
         <div class="isp">
           <label for="isp-data">ISP</label><br>
-          <h2 class="isp-data">ISP</h2>
+          <p class="isp-data">ISP</p>
         </div>
   
       </div>
@@ -57,18 +64,24 @@
   
         <div class="currency-code">
           <label for="currency-data">CURRENCY</label><br>
-          <h2 class="currency-data">BDT</h2>
+          <p class="currency-data">BDT</p>
         </div>
         <div class="flags">
           <label for="flag-icon">COUNTRY FLAG</label><br>
           <img src="" class="flag-icon">
         </div>
-  
+        <div class="currency-convert">
+          <label for="currency-convert">Conversion Rate</label><br>
+          <p class="currency-convert-data">1 USD = </p>
+        </div>
+        <div id="map"></div>
       </div>
 
-      <div id="map"></div>
       </div>
 
+      <div class="dev-info">
+        <p>&#169;&nbsp;Developed By&nbsp;<strong>Mohammad Mustak Absar Khan</strong></br>To Visit Repo,&nbsp;<a target="_blank" href="https://github.com/MustakAbsarKhan">Click Here</a></p>
+      </div>
   </main>
   
   <script src="index.js" defer></script>
