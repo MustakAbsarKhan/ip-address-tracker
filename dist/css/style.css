@@ -33,6 +33,9 @@ body {
   justify-content: center;
   text-align: left;
 }
+.main-body .search-bar > input {
+  padding-left: 20px;
+}
 .main-body .search-bar #searchbox {
   height: 6.5843621399vh;
   width: 34.0277777778vw;
@@ -73,8 +76,8 @@ body {
 }
 .main-body .main-container .content-bar .line {
   border-left: 0.1388888889vw solid hsl(0deg, 0%, 59%);
-  height: 10.7983539095vh;
-  margin-top: 2%;
+  height: 11.8518518519vh;
+  margin-top: 1%;
 }
 .main-body .main-container .content-bar > div > label {
   font-size: 0.9722222222vw;
@@ -115,12 +118,7 @@ body {
 .main-body .main-container #map {
   z-index: 2;
   position: relative;
-  height: calc(618px - 20vw);
+  height: calc(656px - 20vw);
   width: 100%;
   margin-top: 4.6%;
-}
-.main-body .dev-info {
-  margin: 5px;
-  color: #FFFFFF;
-  font-size: 0.8333333333vw;
 }/*# sourceMappingURL=style.css.map */

@@ -16,6 +16,9 @@
         justify-content: center;
         text-align: left;
 
+        & >input{
+            padding-left: 20px;
+        };
         & #searchbox{
             height: p.pxtovh(50);
             width: p.pxtovw(490);
@@ -60,8 +63,8 @@
             
             & .line{
                 border-left: p.pxtovw(2) solid p.color(dark-grey);
-                height: p.pxtovh(82);
-                margin-top: 2%;
+                height: p.pxtovh(90);
+                margin-top: 1%;
             };
 
             & >div>label{
@@ -108,16 +111,9 @@
         & #map { 
             z-index: 2;
             position: relative;
-            height: calc(618px - 20vw);
-            //height: 44vh;
+            height: calc(656px - 20vw);
             width: 100%;
             margin-top: 4.6%;
         };
     };
-    & .dev-info{
-        margin: 5px;
-        color:p.color(simple-white);
-        font-size: p.pxtovw(12);
-    };
-    
 };
