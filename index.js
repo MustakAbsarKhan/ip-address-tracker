@@ -143,7 +143,6 @@ window.addEventListener('load',()=>{
                     }
                 }).addTo(map);
                 //console.log(map);
-                //console.log(flag);
 
                 count--;
                 //console.log(`count has returned to 0 ${count}`)
