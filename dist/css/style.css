@@ -118,7 +118,7 @@ body {
 .main-body .main-container #map {
   z-index: 2;
   position: relative;
-  height: calc(656px - 20vw);
+  height: calc(86.3868312757vh - 20vw);
   width: 100%;
   margin-top: 4.6%;
 }/*# sourceMappingURL=style.css.map */
