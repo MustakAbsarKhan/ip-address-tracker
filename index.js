@@ -22,23 +22,16 @@ window.addEventListener('load',()=>{
     let ipgeolocationAPI = `https://api.ipgeolocation.io/ipgeo?${params}&ip=`;//change api key with own key
     ipgeolocationapiCALL(ipgeolocationAPI);
 
-    let geopluginAPI = `http://www.geoplugin.net/json.gp?`;
-    geopluginapiCALL(geopluginAPI);
-
     //if user clicks on the button
     button.addEventListener('click',function(){
         if(searchbox.value==""){
             ipgeolocationapiCALL(ipgeolocationAPI);
-            geopluginapiCALL(geopluginAPI);
         }else{
             ipgeolocationAPI = `https://api.ipgeolocation.io/ipgeo?${params}&ip=`+searchbox.value;
-            geopluginAPI = `http://www.geoplugin.net/json.gp?ip=`+searchbox.value;
             
-            flag = "red";
             count++;
             console.log(`current count in listenr is ${count}`)
             ipgeolocationapiCALL(ipgeolocationAPI);
-            geopluginapiCALL(geopluginAPI);
         };
     });
 
@@ -46,7 +39,7 @@ window.addEventListener('load',()=>{
         fetch(api)
         .then((response)=>response.json())//collects data as json
         .then((data)=>{
-            console.log(data);
+            //console.log(data);
             //declaring contents of api as objects
             const ip = data.ip;//103.145.74.149
             const {city,country_name,isp,country_flag,latitude,longitude} = data;//Dhaka, Bangladesh,Master Net
@@ -68,7 +61,31 @@ window.addEventListener('load',()=>{
             ispData.textContent = isp;
             currencyData.textContent = code+` (${symbol})`;
             flagIcon.src = country_flag;
-            
+            let currencyCODE = code;//assigining fetched value to this variable for being able to reassign value to following conditions
+
+            if (currencyCODE === "USD"){
+                currencyCODE = "EUR"
+                let xchangeRateAPI = `https://api.exchangerate.host/convert?from=USD&to=${currencyCODE}`;
+                xchangeRateAPICALL(xchangeRateAPI);
+            }else{
+                let xchangeRateAPI = `https://api.exchangerate.host/convert?from=USD&to=${currencyCODE}`;
+                xchangeRateAPICALL(xchangeRateAPI);
+            };
+
+            //calling exchange rate api. This one Converts USD to User's Currency and For users who lives in United States it would convert 1 USD to Euro.
+            function xchangeRateAPICALL(api){
+                fetch(api)
+                .then((response)=>response.json())
+                .then((data)=>{
+                    const {to} = data.query;
+                    const {result} = data;
+                    currencyconvertData.textContent = ("$ 1 = "+`${to} ${result}`);
+                });
+            };
+
+
+
+            //loading map and it's features
             mapload ();
                 
             function mapload (){
@@ -76,9 +93,9 @@ window.addEventListener('load',()=>{
                 if(count===1){
                     //map initiation
                     var map = L.map('map').setView([latitude, longitude], 13);
-                    console.log(`count ${count} of if initialized`)
+                    //console.log(`count ${count} of if initialized`)
                 }else if(count === 2){
-                    console.log(`count is now ${count} and else if running`);
+                    //console.log(`count is now ${count} and else if running`);
                     var map = L.map('map').setView([latitude, longitude], 13);
                     count --;
                 }
@@ -129,29 +146,17 @@ window.addEventListener('load',()=>{
                 //console.log(flag);
 
                 count--;
-                console.log(`count has returned to 0 ${count}`)
+                //console.log(`count has returned to 0 ${count}`)
 
                 function mapOff(){
                     map.off();
                     map.remove();
-                    console.log(` mapoff running using event listener`);
+                    //console.log(` mapoff running using event listener`);
                 };
 
                 button.addEventListener('click',mapOff);
             };
             
         });
-    }
-
-    //Uses geopluginAPI for fetching currency value and conversion rate
-    function geopluginapiCALL(api){//returns "geoplugin_request": "103.145.74.136","geoplugin_status": 200,"geoplugin_delay": "2ms","geoplugin_credit": "Some of the returned data includes GeoLite data created by MaxMind, available from <a href='http://www.maxmind.com'>http://www.maxmind.com</a>.","geoplugin_city": "Dhaka","geoplugin_region": "Dhaka Division","geoplugin_regionCode": "13","geoplugin_regionName": "Dhaka","geoplugin_areaCode": "","geoplugin_dmaCode": "","geoplugin_countryCode": "BD","geoplugin_countryName": "Bangladesh","geoplugin_inEU": 0,"geoplugin_euVATrate": false,"geoplugin_continentCode": "AS","geoplugin_continentName": "Asia","geoplugin_latitude": "23.7272","geoplugin_longitude": "90.4093","geoplugin_locationAccuracyRadius": "100","geoplugin_timezone": "Asia/Dhaka","geoplugin_currencyCode": "BDT","geoplugin_currencySymbol": "Tk","geoplugin_currencySymbol_UTF8": "Tk","geoplugin_currencyConverter": 95.0836
-        fetch(api)
-        .then((response)=>response.json())
-        .then((data)=>{
-            //console.log(data)
-            const {geoplugin_currencyCode,geoplugin_currencyConverter}=data;
-            //console.log(geoplugin_currencyCode,geoplugin_currencyConverter);
-            currencyconvertData.textContent = ("$ 1 = "+`${geoplugin_currencyCode} ${geoplugin_currencyConverter}`);
-        })
     };
 });
