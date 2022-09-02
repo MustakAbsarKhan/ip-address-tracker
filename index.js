@@ -12,7 +12,6 @@ window.addEventListener('load',()=>{
     let currencyData = document.querySelector(".currency-data");
     let flagIcon = document.querySelector(".flag-icon");
     let currencyconvertData = document.querySelector(".currency-convert-data");
-    let flag = "green";
     let count = 0;
     let params = new URLSearchParams({
         apiKey:`04e2d1a955e744ab88058163d4bb1b37`
@@ -85,7 +84,7 @@ window.addEventListener('load',()=>{
 
 
             //loading map and it's features
-            mapload ();
+            mapload();
                 
             function mapload (){
                 count++;

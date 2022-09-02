@@ -22,7 +22,7 @@
 
     <div class="search-bar">
       <input type="text" id="searchbox" placeholder="&nbsp; Search for any IP address">
-      <button class="searchbox-button button"><img class="searchbox-button-img" src="./images/icon-arrow.svg"></button>
+      <button class="searchbox-button button" aria-label="Searchbox Button"><img class="searchbox-button-img" src="./images/icon-arrow.svg" alt="Icon Arrow Image"></button>
     </div>
 
     <div class="main-container">
@@ -30,14 +30,14 @@
       <div class="content-bar">
 
         <div class="ip">
-          <label for="ip-address">IP ADDRESS</label><br>
+          <label>IP ADDRESS</label><br>
           <p class="ip-address">IP Address</p>
         </div>
 
         <div class="line"></div>
 
         <div class="location">
-          <label for="location-data">LOCATION</label><br>
+          <label>LOCATION</label><br>
           <p class="city-data">City</p>
           <p class="country-data">Country</p>
         </div>
@@ -45,7 +45,7 @@
         <div class="line"></div>
 
         <div class="timezone">
-          <label for="timezone-data">TIME ZONE, TIME & DATE</label><br>
+          <label>TIME ZONE, TIME & DATE</label><br>
           <p class="timezone-data">Timezone</p>
           <p class="time-data">Time</p>
           <p class="date-data">Date</p>
@@ -54,7 +54,7 @@
         <div class="line"></div>
 
         <div class="isp">
-          <label for="isp-data">ISP</label><br>
+          <label>ISP</label><br>
           <p class="isp-data">ISP</p>
         </div>
   
@@ -67,11 +67,11 @@
             <p class="currency-data">BDT</p>
           </div>
           <div class="flags">
-            <label for="flag-icon">COUNTRY FLAG</label><br>
-            <img src="" class="flag-icon">
+            <label>COUNTRY FLAG</label><br>
+            <img src="" class="flag-icon" alt="Flag Image">
           </div>
           <div class="currency-convert">
-            <label for="currency-convert">CONVERSION RATE</label><br>
+            <label>CONVERSION RATE</label><br>
             <p class="currency-convert-data" style="margin-top:1px;;">$1 = </p>
           </div>
         </div>
@@ -90,6 +90,6 @@
   <!-- leaflet main js -->
   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin="" defer></script>
   <!-- leaflet plugin js -->
-  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js" charset="utf-8" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.1/dist/L.Control.Locate.min.js" defer></script>
 </body>
 </html>
