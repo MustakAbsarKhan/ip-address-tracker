@@ -6,36 +6,77 @@
     text-align: center;
 
     & .ip-header{
-        margin-top: 2%;
+        margin-top: 3%;
         color: p.color(simple-white);
         font-size: p.pxtovw(35);
+        @include p.breakpoint-down(medium){
+            margin-top: 8%;
+            font-size: p.pxtovwmidMob(60);
+            margin-bottom: 2%;
+        };
+        @include p.breakpoint-down(small){
+            font-size: p.pxtovwMob(40);
+            margin-bottom: 3%;
+            margin-top: 10%;
+        };
     };
 
     & .search-bar{
         display: flex;
         justify-content: center;
         text-align: left;
+        @include p.breakpoint-down(medium){
+            margin-bottom: 2%;
+        };
+        @include p.breakpoint-down(small){
+            margin-bottom: 3%;
+        };
 
         & >input{
-            padding-left: 20px;
+            padding-left: p.pxtovw(15);
+            font-size: p.pxtovw(28);
+            @include p.breakpoint-down(medium){
+                font-size: p.pxtovwmidMob(30);
+            };
+            @include p.breakpoint-down(small){
+                font-size: p.pxtovwMob(20);
+                padding-left: p.pxtovwMob(15);
+            };
+            
         };
         & #searchbox{
             height: p.pxtovh(50);
             width: p.pxtovw(490);
-            //margin-right: 6.3%;
             margin-left: 4%;
+            margin-right: 0.08%;
             border-radius: 13px 0 0 13px;
             border: none;
             margin-top: 1%;
+            @include p.breakpoint-down(medium){
+                width: p.pxtovwmidMob(520);
+                height: p.pxtovh(50);
+            };
+            @include p.breakpoint-down(small){
+                width: p.pxtovwMob(370);
+            };
         };
         & .searchbox-button{
             margin-top: 1%;
             height: p.pxtovh(50);
-            width: p.pxtovw(50);
+            width: p.pxtovw(60);
             background-color: black;
             border: none;
             border-radius: 0 13px 13px 0;
-            margin-right: 55px;
+            margin-right: p.pxtovw(55);
+            @include p.breakpoint-down(medium){
+                margin-right: p.pxtovwmidMob(2);
+                width: p.pxtovw(110);
+                height: p.pxtovh(50);
+            };
+            @include p.breakpoint-down(small){
+                margin-right: p.pxtovwMob(5);
+                width: p.pxtovwMob(60);
+            };
         };
         & button:active {
             opacity: 0.7;
@@ -60,25 +101,62 @@
             text-align: left;
             margin-top: 2%;
             gap:3%;
-            
+            @include p.breakpoint-down(medium){
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding: 4%;
+            };
+            & >div{
+                @include p.breakpoint-down(medium){
+                    padding: 2%;
+                };
+                &:first-child{
+                    @include p.breakpoint-down(medium){
+                        padding-top: 0%;
+                    };
+                };
+                &:last-child{
+                    @include p.breakpoint-down(medium){
+                        padding-bottom: 0%;
+                    };
+                };
+            };
+
             & .line{
                 border-left: p.pxtovw(2) solid p.color(dark-grey);
                 height: p.pxtovh(90);
                 margin-top: 1%;
+                @include p.breakpoint-down(medium){
+                    display: none;
+                };
             };
 
             & >div>label{
                 font-size: p.pxtovw(14);
                 color: p.color(dark-grey);
+                @include p.breakpoint-down(medium){
+                    font-size: p.pxtovwmidMob(30);        
+                };
+                @include p.breakpoint-down(small){
+                    font-size: p.pxtovwMob(15);
+                };
             };
             & >div>p{
                 font-size: p.pxtovw(24);
+                @include p.breakpoint-down(medium){
+                    font-size: p.pxtovwmidMob(40);
+                };
+                @include p.breakpoint-down(small){
+                    font-size: p.pxtovwMob(20);
+                };
             };
         };
 
         & .sub-content-bar{
             display: flex;
             flex-direction: column;
+
             & .sub-content-bar-content{
                 z-index: 9;
                 position: absolute;
@@ -92,18 +170,53 @@
                 width: 50.6%;
                 margin-left: 24.5%;
                 border-radius: 15px;
-                
+                @include p.breakpoint-down(medium){
+                    flex-direction: column;
+                    padding: 4%;
+                };
+
+                &>div{
+                    @include p.breakpoint-down(medium){
+                        padding:2%;
+                    };
+                    &:last-child{
+                        @include p.breakpoint-down(medium){
+                            padding-bottom:0%;
+                        };
+                    };
+                    &:first-child{
+                        @include p.breakpoint-down(medium){
+                            padding-top:0%;
+                        };
+                    };
+                };
+
                 & .flags>img{
                     margin-top: 5px;
                     width: p.pxtovw(64);
+                    @include p.breakpoint-down(medium){
+                        width: p.pxtovwmidMob(95);
+                    };
                 };
 
                 & >div>label{
                     font-size: p.pxtovw(14);
                     color: p.color(dark-grey);
+                    @include p.breakpoint-down(medium){
+                        font-size: p.pxtovwmidMob(30);
+                    };
+                    @include p.breakpoint-down(small){
+                        font-size: p.pxtovwMob(15);
+                    };
                 };
                 & >div>p{
                     font-size: p.pxtovw(24);
+                    @include p.breakpoint-down(medium){
+                        font-size: p.pxtovwmidMob(40);
+                    };
+                    @include p.breakpoint-down(small){
+                        font-size: p.pxtovwMob(20);
+                    };
                 };
             };
            
@@ -114,6 +227,27 @@
             height: calc(p.pxtovh(656) - 20vw);
             width: 100%;
             margin-top: 4.6%;
+            @include p.breakpoint-down(medium){
+                height: calc(p.pxtovh(600) - 20vw);
+                margin-top: 25.5%;
+            };
+            @include p.breakpoint-down(small){
+                height: calc(p.pxtovh(400) - 20vw);
+            };
+            @include p.breakpoint-down(ultsmall){
+                height: calc(p.pxtovh(450) - 20vw);
+            };
+        };
+        & .devinfo{
+            padding: 0.5%;
+            background: #F8F4E5;
+            font-size: p.pxtovw(14);
+            @include p.breakpoint-down(medium){
+                font-size: p.pxtovwmidMob(30);
+            };
+            @include p.breakpoint-down(small){
+                font-size: p.pxtovwMob(20);
+            };
         };
     };
 };

@@ -14,5 +14,8 @@
 };
 //375px default width
 @function pxtovwMob($px){
-   @return math.div($px*100,375)+vw;
+   @return math.div($px*100,550)+vw;
+};
+@function pxtovwmidMob($px){
+   @return math.div($px*100,912)+vw;
 };
