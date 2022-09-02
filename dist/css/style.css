@@ -60,16 +60,11 @@ body {
 }
 .main-body .search-bar > input {
   padding-left: 1.0416666667vw;
-  font-size: 1.9444444444vw;
-}
-@media (max-width: 912px) {
-  .main-body .search-bar > input {
-    font-size: 3.2894736842vw;
-  }
+  font-size: 18px;
 }
 @media (max-width: 550px) {
   .main-body .search-bar > input {
-    font-size: 3.6363636364vw;
+    font-size: 3.2727272727vw;
     padding-left: 2.7272727273vw;
   }
 }
@@ -298,15 +293,10 @@ body {
 .main-body .main-container .devinfo {
   padding: 0.5%;
   background: #F8F4E5;
-  font-size: 0.9722222222vw;
-}
-@media (max-width: 912px) {
-  .main-body .main-container .devinfo {
-    font-size: 3.2894736842vw;
-  }
+  font-size: 18px;
 }
 @media (max-width: 550px) {
   .main-body .main-container .devinfo {
-    font-size: 3.6363636364vw;
+    font-size: 3.2727272727vw;
   }
 }/*# sourceMappingURL=style.css.map */

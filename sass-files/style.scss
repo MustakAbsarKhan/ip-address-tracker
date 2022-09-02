@@ -34,12 +34,9 @@
 
         & >input{
             padding-left: p.pxtovw(15);
-            font-size: p.pxtovw(28);
-            @include p.breakpoint-down(medium){
-                font-size: p.pxtovwmidMob(30);
-            };
+            font-size: 18px;
             @include p.breakpoint-down(small){
-                font-size: p.pxtovwMob(20);
+                font-size: p.pxtovwMob(18);
                 padding-left: p.pxtovwMob(15);
             };
             
@@ -242,12 +239,9 @@
         & .devinfo{
             padding: 0.5%;
             background: #F8F4E5;
-            font-size: p.pxtovw(14);
-            @include p.breakpoint-down(medium){
-                font-size: p.pxtovwmidMob(30);
-            };
+            font-size: 18px;
             @include p.breakpoint-down(small){
-                font-size: p.pxtovwMob(20);
+                font-size: p.pxtovwMob(18);
             };
         };
     };

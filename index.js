@@ -79,7 +79,8 @@ window.addEventListener('load',()=>{
                 .then((data)=>{
                     const {to} = data.query;
                     const {result} = data;
-                    currencyconvertData.textContent = ("$ 1 = "+`${to} ${result}`);
+                    const convertedAmount = result.toFixed(2);
+                    currencyconvertData.textContent = ("$ 1 = "+`${to} ${convertedAmount}`);
                 });
             };
 
