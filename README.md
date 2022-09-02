@@ -19,3 +19,4 @@
 - **Highly Accurate Device Location** Finding Feature
 - **IP ADDRESS, LOCATION, TIME ZONE, TIME & DATE, ISP** Info Showing Feature
 - **CURRENCY, COUNTRY FLAG & CONVERSION RATE(Latest)** Info Showing Feature
+- **Error Catching** and **Automated Action** Taking Feature
