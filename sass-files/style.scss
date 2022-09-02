@@ -194,6 +194,7 @@
                 & .flags>img{
                     margin-top: 5px;
                     width: p.pxtovw(64);
+                    border: 1px solid black;
                     @include p.breakpoint-down(medium){
                         width: p.pxtovwmidMob(95);
                     };

@@ -238,6 +238,7 @@ body {
 .main-body .main-container .sub-content-bar .sub-content-bar-content .flags > img {
   margin-top: 5px;
   width: 4.4444444444vw;
+  border: 1px solid black;
 }
 @media (max-width: 912px) {
   .main-body .main-container .sub-content-bar .sub-content-bar-content .flags > img {
