@@ -14,7 +14,7 @@
 - [LeafletJS](https://leafletjs.com/)
 
 ### Features
-**Disclaimer:**The Location Detected Automatically Might Be Different From Your Actual Device Location
+**Disclaimer:The Location Detected Automatically Might Be Different From Your Actual Device Location**
 - User's **Network IP Detection** on Load and IP Lookup Using Search Function
 - **IPv4 & IPv6** Supported IP Locating Search Feature
 - **Highly Accurate Device Location** Finding Feature on **THE MAP**
