@@ -28,9 +28,7 @@ window.addEventListener('load',()=>{
             ipgeolocationapiCALL(ipgeolocationAPI);
         }else{
             ipgeolocationAPI = `https://api.ipgeolocation.io/ipgeo?${params}&ip=`+searchbox.value;
-            
             count++;
-            console.log(`current count in listenr is ${count}`)
             ipgeolocationapiCALL(ipgeolocationAPI);
         };
     });
@@ -39,7 +37,7 @@ window.addEventListener('load',()=>{
         fetch(api)
         .then((response)=>response.json())//collects data as json
         .then((data)=>{
-            //console.log(data);
+            
             //declaring contents of api as objects
             const ip = data.ip;//103.145.74.149
             const {city,country_name,isp,country_flag,latitude,longitude} = data;//Dhaka, Bangladesh,Master Net
@@ -94,9 +92,9 @@ window.addEventListener('load',()=>{
                 if(count===1){
                     //map initiation
                     var map = L.map('map').setView([latitude, longitude], 13);
-                    //console.log(`count ${count} of if initialized`)
+                    
                 }else if(count === 2){
-                    //console.log(`count is now ${count} and else if running`);
+                    
                     var map = L.map('map').setView([latitude, longitude], 13);
                     count --;
                 }
@@ -143,20 +141,19 @@ window.addEventListener('load',()=>{
                         enableHighAccuracy: true
                     }
                 }).addTo(map);
-                //console.log(map);
-
                 count--;
-                //console.log(`count has returned to 0 ${count}`)
-
+                
                 function mapOff(){
                     map.off();
                     map.remove();
-                    //console.log(` mapoff running using event listener`);
                 };
 
                 button.addEventListener('click',mapOff);
             };
             
-        });
+        }).catch((error) => {
+            alert("Wrong IP. Press OK to reload!");
+            window.location.reload();
+          });
     };
 });
