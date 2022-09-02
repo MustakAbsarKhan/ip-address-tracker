@@ -15,11 +15,11 @@ window.addEventListener('load',()=>{
     let flag = "green";
     let count = 0;
     let params = new URLSearchParams({
-        apiKey:`7235e1cf346f494dad14d474a9a0e006`
+        apiKey:`04e2d1a955e744ab88058163d4bb1b37`
     });
 
 
-    let ipgeolocationAPI = `https://api.ipgeolocation.io/ipgeo?${params}&ip=`;//change api key with own key
+    let ipgeolocationAPI = `https://api.ipgeolocation.io/ipgeo?${params}&ip=`;
     ipgeolocationapiCALL(ipgeolocationAPI);
 
     //if user clicks on the button
