@@ -16,7 +16,7 @@ window.addEventListener("load", () => {
   let count = 0;
   //ipgeolocation api
   let params = new URLSearchParams({
-    apiKey: config.IPGEO_API_TOKEN,
+    apiKey: `04e2d1a955e744ab88058163d4bb1b37`,
   });
   var map;
   let ipgeolocationAPI = `https://api.ipgeolocation.io/ipgeo?${params}&ip=`;
