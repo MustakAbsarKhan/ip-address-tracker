@@ -29,9 +29,10 @@ window.addEventListener("load", () => {
         `https://api.ipgeolocation.io/ipgeo?${params}&ip=` + searchbox.value;
       count++;
       ipgeolocationapiCALL(ipgeolocationAPI);
-    }
+    };
   });
 
+  //initialization of map on load cause the count value stays 0 at the beginning and when the search icon is pressed for the first time
   function initializeMap(latitude, longitude) {
     map = L.map("map").setView([latitude, longitude], 13);
     L.tileLayer(
@@ -121,9 +122,10 @@ window.addEventListener("load", () => {
             });
         }
 
-        if (count === 0) {
+        //default value of count is 0 which gets incremented in the previous if function(which checks if the input field has any value)
+        if (count === 0) {//initializing the map and the layout on load
           initializeMap(latitude, longitude);
-        } else {
+        } else {//resetting the marker position as the map and layout is already initialized
           var blackIcon = L.icon({
             iconUrl: "images/icon-location.svg",
             iconSize: [30, 40],
@@ -135,7 +137,9 @@ window.addEventListener("load", () => {
         }
       })
       .catch((error) => {
-        console.log("Wrong IP. Press OK to reload!", error);
+        console.log("Error is "+ error);
+        alert("Wrong IP. Please Try Again.");
+        searchbox.value = "";
       });
-  }
+  };
 });
