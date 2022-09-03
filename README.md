@@ -11,7 +11,7 @@
 - HTML, SASS(SCSS) & JS
 - [IPGeoLocationAPI](https://ipgeolocation.io/)
 - [ExchangeRateAPI](https://exchangerate.host/#/)
-- [LeafletJS@1.8.0](https://leafletjs.com/)
+- [LeafletJS v1.8.0](https://leafletjs.com/)
 
 ### Features
 **Disclaimer:The Location Detected Automatically Might Be Different From Your Actual Device Location**
