@@ -12,7 +12,6 @@ window.addEventListener("load", () => {
   let currencyData = document.querySelector(".currency-data");
   let flagIcon = document.querySelector(".flag-icon");
   let currencyconvertData = document.querySelector(".currency-convert-data");
-  let flag = "green";
   let count = 0;
   //ipgeolocation api
   let params = new URLSearchParams({
