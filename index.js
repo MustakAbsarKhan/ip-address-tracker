@@ -1,4 +1,5 @@
 "use strict";
+import ipgeolocationAPIKEY from "./key.js";
 window.addEventListener("load", () => {
   let searchbox = document.querySelector("#searchbox");
   let button = document.querySelector(".button");
@@ -15,7 +16,7 @@ window.addEventListener("load", () => {
   let count = 0;
   //ipgeolocation api
   let params = new URLSearchParams({
-    apiKey: `04e2d1a955e744ab88058163d4bb1b37`,
+    apiKey: ipgeolocationAPIKEY,
   });
   var map;
   let ipgeolocationAPI = `https://api.ipgeolocation.io/ipgeo?${params}&ip=`;
