@@ -1,5 +1,5 @@
 "use strict";
-import ipgeolocationAPIKEY from "./key.js";
+import ipgeolocationAPIKEY from "./dist/key.js";
 window.addEventListener("load", () => {
   let searchbox = document.querySelector("#searchbox");
   let button = document.querySelector(".button");
