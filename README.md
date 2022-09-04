@@ -1,6 +1,6 @@
 # ip-address-tracker
 **A real time IP Address Tracker and more
--> [Live Site URL](https://mustakabsarkhan.github.io/ip-address-tracker/)** <br>
+-> [Live Site URL](https://ip-address-tracker-live.netlify.app/)** <br>
 
 ### Screenshot
 ![](./images/web-view.png)<br>
