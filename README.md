@@ -16,8 +16,10 @@
   </a>
 </p>
 <br><br>
-**A real time IP Address Tracker and more
--> [Live Site URL](https://ip-address-tracker-live.netlify.app/)** <br>
+<p align="center">
+  <b>A real time IP Address Tracker and more</b> <br> 
+  Live Site URL - https://ip-address-tracker-live.netlify.app/ <br>
+</p>
 
 ### Screenshot
 ![](./images/web-view.png)<br>
