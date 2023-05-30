@@ -1,6 +1,21 @@
 # ip-address-tracker
 [![Netlify Status](https://api.netlify.com/api/v1/badges/b5afb7bc-04d7-4b02-96a8-092297aa555d/deploy-status)](https://app.netlify.com/sites/ip-address-tracker-live/deploys)
 <br><br>
+<p align="center">
+  <a href="https://github.com/MustakAbsarKhan/ip-address-tracker/issues">
+    <img src="https://img.shields.io/github/issues/MustakAbsarKhan/ip-address-tracker"/> 
+  </a>
+  <a href="https://github.com/MustakAbsarKhan/ip-address-tracker/network/members">
+    <img src="https://img.shields.io/github/forks/MustakAbsarKhan/ip-address-tracker"/> 
+  </a>  
+  <a href="https://github.com/MustakAbsarKhan/ip-address-tracker/stargazers">
+    <img src="https://img.shields.io/github/stars/MustakAbsarKhan/ip-address-tracker"/> 
+  </a>
+    <a href="https://github.com/MustakAbsarKhan/ip-address-tracker/LICENSE">
+    <img src="https://img.shields.io/github/license/MustakAbsarKhan/ip-address-tracker"/> 
+  </a>
+</p>
+<br><br>
 **A real time IP Address Tracker and more
 -> [Live Site URL](https://ip-address-tracker-live.netlify.app/)** <br>
 
